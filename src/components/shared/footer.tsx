@@ -1,12 +1,9 @@
 "use client";
-import { Github, Twitter } from "lucide-react";
+import {Github, Twitter} from "lucide-react";
 import Link from "next/link";
-import { Input } from "../ui/input";
-
-
+import {Input} from "../ui/input";
 
 export default function Footer() {
-  
   return (
     <footer className="bg-gray-100 py-8 dark:bg-gray-800 mt-10">
       <div className="container mx-auto px-4 md:px-6">
@@ -93,10 +90,9 @@ export default function Footer() {
           <div className="space-y-4">
             <h3 className="text-md font-semibold">Newsletter</h3>
             <p className="text-gray-500 dark:text-gray-400 text-sm">
-              Subscribe to our newsletter to stay up-to-date with the latest
-              news and updates.
+              Subscribe to our newsletter to stay up-to-date with the latest news and updates.
             </p>
-            <form action=''>
+            <form action="">
               <div className="flex space-x-2">
                 <Input
                   type="email"
@@ -109,12 +105,7 @@ export default function Footer() {
                 />
                 {/* <SubmitButton /> */}
               </div>
-              <div
-                id="email-error"
-                aria-label="polite"
-                aria-atomic="true"
-                className="px-1"
-              >
+              <div id="email-error" aria-label="polite" aria-atomic="true" className="px-1">
                 {/* {state?.errors?.email && (
                   <p
                     key={state.errors.email[0]}
