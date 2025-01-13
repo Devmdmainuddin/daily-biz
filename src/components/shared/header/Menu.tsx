@@ -26,17 +26,15 @@ const Menu = () => {
             <SheetContent>
               <SheetHeader>
                 <SheetTitle>Are you absolutely sure?</SheetTitle>
-                <SheetDescription>
-                 
-                </SheetDescription>
+                <SheetDescription></SheetDescription>
               </SheetHeader>
               <div className="flex  flex-col gap-2   ">
-                    {data.headerMenus.map((menu) => (
-                      <Link href={menu.href} key={menu.href} className="header-button !p-2">
-                        {menu.name}
-                      </Link>
-                    ))}
-                  </div>
+                {data.headerMenus.map((menu) => (
+                  <Link href={menu.href} key={menu.href} className="header-button !p-2">
+                    {menu.name}
+                  </Link>
+                ))}
+              </div>
             </SheetContent>
           </Sheet>
         </div>

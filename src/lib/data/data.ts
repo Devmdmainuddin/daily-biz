@@ -176,12 +176,11 @@ const data: Data = {
 };
 export default data;
 
-export const POSTS: { title: string; href: string; description: string }[] = [
+export const POSTS: {title: string; href: string; description: string}[] = [
   {
     title: "React",
     href: "/blog/react",
-    description:
-      "Learn React.js and Next.js in a simple to understand articles",
+    description: "Learn React.js and Next.js in a simple to understand articles",
   },
   {
     title: "Javascript",

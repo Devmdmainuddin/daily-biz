@@ -1,11 +1,9 @@
 import {APP_NAME} from "@/lib/constants";
 import Image from "next/image";
 import Link from "next/link";
-
-
 import Search from "./Search";
 import Menu from "./Menu";
-import { MainNav } from "./main-nav";
+import {MainNav} from "./main-nav";
 
 const Header = () => {
   return (
@@ -27,8 +25,8 @@ const Header = () => {
           <Search />
         </div>
       </div>
-      <div className="hidden md:flex items-center justify-center mb-4">
-        <MainNav/>
+      <div className="hidden md:flex items-center justify-center pb-8">
+        <MainNav />
       </div>
     </header>
   );
