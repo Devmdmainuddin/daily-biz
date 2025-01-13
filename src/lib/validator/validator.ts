@@ -16,9 +16,9 @@ export const BlogPostSchema = z.object({
 export type BlogPost = z.infer<typeof BlogPostSchema>;
 
 export type Data = {
-  blogs: BlogPost[]
+  blogs: BlogPost[];
   headerMenus: {
-    name: string
-    href: string
-  }[]
-}
+    name: string;
+    href: string;
+  }[];
+};

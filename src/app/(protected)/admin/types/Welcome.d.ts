@@ -1,3 +1,3 @@
 export interface IWelcomeMessage {
-    message: string;
+  message: string;
 }

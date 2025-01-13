@@ -1,12 +1,11 @@
 import Welcome from "./components/Welcome";
 
-
 const HomePage = () => {
-    return (
-        <>
-            <Welcome />
-        </>
-    );
+  return (
+    <>
+      <Welcome />
+    </>
+  );
 };
 
 export default HomePage;

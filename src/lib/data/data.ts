@@ -137,41 +137,77 @@ const data: Data = {
   headerMenus: [
     {
       name: "Home",
-      href: '/',
+      href: "/",
     },
     {
       name: "Today's News",
-      href: '/search?tag=todays-deal',
+      href: "/search?tag=todays-deal",
     },
     {
-      name: 'Sports',
-      href: '/search?tag=sports',
+      name: "Sports",
+      href: "/search?tag=sports",
     },
     {
-      name: 'Business',
-      href: '/search?tag=business',
+      name: "Business",
+      href: "/search?tag=business",
     },
     {
-      name: 'Politics',
-      href: '/search?tag=politics',
+      name: "Politics",
+      href: "/search?tag=politics",
     },
     {
-      name: 'Entertainment',
-      href: '/search?tag=entertainment',
+      name: "Entertainment",
+      href: "/search?tag=entertainment",
     },
     {
-      name: 'Featured Blogs',
-      href: '/search?tag=featured',
+      name: "Featured Blogs",
+      href: "/search?tag=featured",
     },
     {
-      name: 'About Us',
-      href: '/about',
+      name: "About Us",
+      href: "/about",
     },
     {
-      name: 'Help',
-      href: '/page/help',
+      name: "Help",
+      href: "/page/help",
     },
   ],
-  blogs
-}
+  blogs,
+};
 export default data;
+
+export const POSTS: { title: string; href: string; description: string }[] = [
+  {
+    title: "React",
+    href: "/blog/react",
+    description:
+      "Learn React.js and Next.js in a simple to understand articles",
+  },
+  {
+    title: "Javascript",
+    href: "/blog/javascript",
+    description: "Learn what are new in the javascript world",
+  },
+  {
+    title: "CSS",
+    href: "/blog/css",
+    description: "Everything about CSS and the new features.",
+  },
+  {
+    title: "Performance",
+    href: "/blog/performance",
+    description: "How to make your next app Blazing fast",
+  },
+  {
+    title: "Animation",
+    href: "/blog/animations",
+    description:
+      "Everything you need to know about animations. We are going to learn about animation library like framer motion, GSAP and many more.",
+  },
+  {
+    title: "Career",
+    href: "/blog/career",
+    description:
+      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+  },
+];
