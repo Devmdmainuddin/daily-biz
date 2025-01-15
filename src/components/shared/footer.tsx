@@ -3,7 +3,10 @@ import {Github, Twitter} from "lucide-react";
 import Link from "next/link";
 import {Input} from "../ui/input";
 
+
 export default function Footer() {
+
+
   return (
     <footer className="bg-gray-100 py-8 dark:bg-gray-800 mt-10">
       <div className="container mx-auto px-4 md:px-6">
