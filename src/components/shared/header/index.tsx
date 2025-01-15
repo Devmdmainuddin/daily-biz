@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import {APP_NAME} from "@/lib/constants";
 import Image from "next/image";
 import Link from "next/link";
@@ -6,9 +6,7 @@ import Search from "./Search";
 import Menu from "./Menu";
 import {MainNav} from "./main-nav";
 
-
 const Header = () => {
-
   return (
     <header className="bg-[#F3F4F6]  text-[#000000]">
       <div className="px-2">

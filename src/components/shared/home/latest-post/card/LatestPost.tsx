@@ -5,9 +5,9 @@ const LatestPost = () => {
     <div>
       <h1 className="inline-block font-heading text-xl tracking-tight ">Recently Published</h1>
       <div className="w-full">
-        <BlogSinCard/>
-        <BlogSinCard/>
-        <BlogSinCard/>
+        <BlogSinCard />
+        <BlogSinCard />
+        <BlogSinCard />
       </div>
     </div>
   );

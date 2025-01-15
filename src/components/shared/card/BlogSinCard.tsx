@@ -3,8 +3,7 @@ import Image from "next/image";
 const BlogSinCard = () => {
   return (
     <div className="rounded w-full md:flex mb-10">
-      <div className="h-48 md:w-48 flex-none bg-[url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80')] bg-cover text-center overflow-hidden opacity-75">
-      </div>
+      <div className="h-48 md:w-48 flex-none bg-[url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80')] bg-cover text-center overflow-hidden opacity-75"></div>
       <div className="bg-white rounded px-4 flex flex-col justify-between leading-normal">
         <div>
           <div className="mt-3 md:mt-0 text-gray-700 font-bold text-2xl mb-2">

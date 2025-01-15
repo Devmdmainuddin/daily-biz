@@ -92,7 +92,11 @@ const Toolbar = ({editor, content}: Props) => {
     >
       <div className="flex justify-start items-center gap-5 w-full lg:w-10/12 flex-wrap ">
         {tiktapbuttons.map(({icon, isActive, onClick}, index) => (
-          <Button key={index} onClick={onClick} className={isActive ? " text-red-600 rounded-lg" : "text-white"}>
+          <Button
+            key={index}
+            onClick={onClick}
+            className={isActive ? " text-red-600 rounded-lg" : "text-white"}
+          >
             {icon}
           </Button>
         ))}
