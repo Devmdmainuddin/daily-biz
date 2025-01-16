@@ -5,7 +5,7 @@ import {ChevronRight, CopyPlus, FolderKanban, Box, UserRoundCog, MonitorCog} fro
 
 interface MenuItemProps {
   href: string;
-  icon: ReactNode; 
+  icon: ReactNode;
   label: string;
 }
 const MenuItem: React.FC<MenuItemProps> = ({href, icon, label}) => (

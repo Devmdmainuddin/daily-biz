@@ -6,7 +6,6 @@ import "../globals.css";
 import {APP_DESCRIPTION, APP_NAME, APP_SLOGAN} from "@/lib/constants";
 import DashBoardHeader from "./components/DashBoardHeader";
 
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -25,11 +24,7 @@ export const metadata: Metadata = {
   description: APP_DESCRIPTION,
 };
 
-
-
-
 const layout = ({children}: {children: ReactNode}) => {
-
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
@@ -41,7 +36,7 @@ const layout = ({children}: {children: ReactNode}) => {
             </nav>
 
             <section className="main-content w-full ">
-              <DashBoardHeader/>
+              <DashBoardHeader />
               <div className="px-6 mt-6">{children}</div>
             </section>
           </div>
