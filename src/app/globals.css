@@ -62,7 +62,12 @@ body {
     --chart-5: 340 75% 55%;
   }
 }
-
+@layer utilities {
+  .HeadingTitle {
+    @apply  text-[12px] tracking-tight uppercase border-b border-[#d8dada] pb-2.5;
+  }
+ 
+}
 @layer base {
   * {
     @apply border-border;

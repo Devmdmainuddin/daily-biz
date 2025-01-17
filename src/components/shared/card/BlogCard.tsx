@@ -11,7 +11,7 @@ const BlogCard = () => {
         className="absolute left-0 top-0 w-full h-full rounded z-0 object-cover"
       />
       <div className="p-4 absolute bottom-0 left-0 z-20">
-        <span className="px-4 py-1 bg-black text-gray-200 inline-flex items-center justify-center mb-2">
+        <span className="px-4 py-1 text-sm bg-[#3abf7f] text-gray-200 inline-flex items-center justify-center mb-2">
           Science
         </span>
         <h2 className="text-xl font-medium text-gray-100 leading-tight">

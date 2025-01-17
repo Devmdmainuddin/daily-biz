@@ -1,12 +1,12 @@
 "use client";
-import React, { useState } from "react";
+import React, {useState} from "react";
 import dynamic from "next/dynamic";
 import "react-quill-new/dist/quill.snow.css";
 import Editor from "@/components/Editor/Editor";
-const ReactQuill = dynamic(() => import("react-quill-new"), { ssr: false });
+const ReactQuill = dynamic(() => import("react-quill-new"), {ssr: false});
 
 const Blogs = () => {
-  const [formData, setFormData] = useState<{ content: string }>({ content: "" });
+  const [formData, setFormData] = useState<{content: string}>({content: ""});
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -28,17 +28,16 @@ const Blogs = () => {
           theme="snow"
           placeholder="Write something..."
           className="h-72 mb-12"
-          onChange={(value) => setFormData({ content: value })}
+          onChange={(value) => setFormData({content: value})}
         />
         <Editor
-                        placeholder='Write course description here...'
-                        value={''}
-                        onChange={(value) => {
-                            console.log('value:', value);
-                            // setCourseDescription(value);
-  
-                        }}
-                    />
+          placeholder="Write course description here..."
+          value={""}
+          onChange={(value) => {
+            console.log("value:", value);
+            // setCourseDescription(value);
+          }}
+        />
         <button type="submit" className="btn btn-primary">
           Submit
         </button>

@@ -2,14 +2,14 @@ import Image from "next/image";
 
 const BlogSinCard = () => {
   return (
-    <div className="rounded w-full md:flex mb-10">
+    <div className="rounded w-full md:flex mb-10 p-6 my-4 shadow-[rgba(100,100,111,0.2)_0px_7px_29px_0px] hover:shadow-[rgba(0,0,0,0.35)_0px_5px_15px] hover:-translate-y-3 transition-all duration-500">
       <div className="h-48 md:w-48 flex-none bg-[url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80')] bg-cover text-center overflow-hidden opacity-75"></div>
       <div className="bg-white rounded px-4 flex flex-col justify-between leading-normal">
         <div>
-          <div className="mt-3 md:mt-0 text-gray-700 font-bold text-2xl mb-2">
+          <div className="mt-3 md:mt-0 text-gray-700 font-bold text-xl mb-2">
             Suspendisse varius justo eu risus laoreet fermentum non aliquam dolor
           </div>
-          <p className="text-gray-700 text-base">
+          <p className="text-gray-700 text-sm">
             Mauris porttitor, velit at tempus vulputate, odio turpis facilisis dui, vitae eleifend
             odio ipsum at odio. Phasellus luctus scelerisque felis eget suscipit.
           </p>

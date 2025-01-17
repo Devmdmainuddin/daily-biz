@@ -1,16 +1,16 @@
 .ql-toolbar {
-    @apply rounded-t-md text-left;
+  @apply rounded-t-md text-left;
 }
 
 .ql-container {
-    @apply rounded-b-md;
+  @apply rounded-b-md;
 }
 
 .ql-editor {
-    @apply min-h-[300px];
+  @apply min-h-[300px];
 }
 
 .ql-toolbar.ql-snow,
 .ql-container.ql-snow {
-    @apply !border-gray-100;
+  @apply !border-gray-100;
 }

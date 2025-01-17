@@ -15,7 +15,7 @@ import {
 
 import {POSTS} from "@/lib/data/data";
 import {Button} from "@/components/ui/button";
-import {MenuIcon} from "lucide-react";
+// import {MenuIcon} from "lucide-react";
 
 export function MainNav() {
   return (
@@ -27,7 +27,8 @@ export function MainNav() {
               <NavigationMenuLink
                 className={`bg-0 flex items-center gap-1 hover:bg-[#d7f9ce] p-2 ${navigationMenuTriggerStyle}`}
               >
-                <MenuIcon /> ALL
+                {/* <MenuIcon />  */}
+                ALL
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
