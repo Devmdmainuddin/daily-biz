@@ -64,9 +64,8 @@ body {
 }
 @layer utilities {
   .HeadingTitle {
-    @apply  text-[12px] tracking-tight uppercase border-b border-[#d8dada] pb-2.5;
+    @apply text-[12px] tracking-tight uppercase border-b border-[#d8dada] pb-2.5;
   }
- 
 }
 @layer base {
   * {

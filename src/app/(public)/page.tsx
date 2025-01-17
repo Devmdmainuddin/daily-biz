@@ -16,10 +16,10 @@ const Home = async () => {
           <LatestPost />
         </main>
         <aside className="w-full lg:w-1/3 px-3">
-          <Sidebar/>
+          <Sidebar />
         </aside>
       </div>
-      <Sitebottom/>
+      <Sitebottom />
     </div>
   );
 };

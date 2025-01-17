@@ -4,14 +4,13 @@ import dynamic from "next/dynamic";
 import "react-quill-new/dist/quill.snow.css";
 import "./editor.css";
 
-
 const ReactQuill = dynamic(
   async () => {
     const ReactQuill = await import("react-quill-new");
     // const { Quill } = ReactQuill.default;
     // const Block = Quill.import('blots/block') as any
     // Block.tagName = 'div';
-    // Quill.register(Block,true);                                                     
+    // Quill.register(Block,true);
     return ReactQuill;
   },
   {
@@ -34,11 +33,11 @@ const Editor = ({value, onChange, placeholder}: IProps) => {
   const modules = {
     toolbar: [
       [{header: [1, 2, 3, 4, 5, 6, false]}],
-      [{ 'font': [] }],
+      [{font: []}],
       ["bold", "italic", "underline", "strike", "blockquote"],
-      [{ 'color': [] }, { 'background': [] }],
+      [{color: []}, {background: []}],
       [{list: "ordered"}, {list: "bullet"}, {indent: "-1"}, {indent: "+1"}],
-      ["link", "image","code-block"],
+      ["link", "image", "code-block"],
     ],
   };
 
@@ -52,9 +51,9 @@ const Editor = ({value, onChange, placeholder}: IProps) => {
     "list",
     "color",
     "background",
-    'code',
-  "code-block",
-    'font',
+    "code",
+    "code-block",
+    "font",
     "size",
     // 'bullet',
     "indent",

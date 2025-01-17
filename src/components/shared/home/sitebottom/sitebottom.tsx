@@ -16,7 +16,7 @@ const Sitebottom = () => {
       <div>
         <h1 className="HeadingTitle">lifestyle</h1>
         <div className="my-[30px]">
-        <WidgetCard />
+          <WidgetCard />
           <WidgetCard />
           <WidgetCard />
         </div>
@@ -24,7 +24,7 @@ const Sitebottom = () => {
       <div>
         <h1 className="HeadingTitle">photography</h1>
         <div className="my-[30px]">
-        <WidgetCard />
+          <WidgetCard />
           <WidgetCard />
           <WidgetCard />
         </div>
