@@ -3,8 +3,8 @@ import {Document, Model, model, models, Schema} from "mongoose";
 
 export interface IBlog extends Document, BlogPost {
   _id: string;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt: string;
+  updatedAt: string;
 }
 
 const blogSchema = new Schema<IBlog>(

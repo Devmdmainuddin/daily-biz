@@ -11,12 +11,12 @@ const main = async () => {
     await connectToDatabase(process.env.MONGODB_URI);
     const {blogs} = data;
     await Blog.deleteMany();
-    const createdProducts = await Blog.insertMany(blogs);
+    await Blog.insertMany(blogs);
 
-    console.log({
-      createdProducts,
-      message: "Seeded database successfully",
-    });
+    // console.log({
+    //   createdProducts,
+    //   message: "Seeded database successfully",
+    // });
     process.exit(0);
   } catch (error) {
     console.error(error);

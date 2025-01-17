@@ -3,7 +3,7 @@ import Image from "next/image";
 const WidgetCard = () => {
   return (
     <div>
-      <div className="flex justify-between lg:justify-start gap-3 p-6 my-4 shadow-[rgba(100,100,111,0.2)_0px_7px_29px_0px] hover:shadow-[rgba(0,0,0,0.35)_0px_5px_15px] hover:-translate-y-3 transition-all duration-500">
+      <div className=" flex gap-3 p-6 my-4 shadow-[rgba(100,100,111,0.2)_0px_7px_29px_0px] hover:shadow-[rgba(0,0,0,0.35)_0px_5px_15px] hover:-translate-y-3 transition-all duration-500">
         <div className="image">
           <Image
             width={90}

@@ -48,3 +48,11 @@ export function formatDate(date: string, includeRelative = false) {
 
   return `${fullDate} (${formattedDate})`;
 }
+export const formatPublicationDate = (publicationDate: string): string => {
+  const dateObj = new Date(publicationDate);
+  return new Intl.DateTimeFormat("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  }).format(dateObj);
+};

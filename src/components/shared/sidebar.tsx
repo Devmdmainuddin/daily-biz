@@ -1,6 +1,6 @@
 import CommentsCard from "./card/CommentsCard";
 import WidgetCard from "./card/WidgetCard";
-import WidgetCardRight from "./card/WidgetCardRight";
+
 import InstagramImage from "./home/imageGarary/InstagramImage";
 
 const Sidebar = () => {
@@ -8,7 +8,7 @@ const Sidebar = () => {
     <div>
       <div>
         <h1 className="HeadingTitle">Recently Published</h1>
-        <div className="my-[30px]">
+        <div className="my-[30px] w-full">
           <WidgetCard />
           <WidgetCard />
           <WidgetCard />
@@ -18,9 +18,9 @@ const Sidebar = () => {
       <div>
         <h1 className="HeadingTitle">most popular</h1>
         <div className="my-[30px]">
-          <WidgetCardRight />
-          <WidgetCardRight />
-          <WidgetCardRight />
+          <WidgetCard />
+          <WidgetCard />
+          <WidgetCard />
         </div>
       </div>
       <div>

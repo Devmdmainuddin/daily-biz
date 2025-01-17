@@ -4,7 +4,7 @@ import React from "react";
 const WidgetCardRight = () => {
   return (
     <div>
-      <div className="flex justify-between lg:justify-start gap-3 p-6 my-4 shadow-[rgba(100,100,111,0.2)_0px_7px_29px_0px] hover:shadow-[rgba(0,0,0,0.35)_0px_5px_15px] hover:-translate-y-3 transition-all duration-500">
+      <div className="flex  gap-3 p-6 my-4 shadow-[rgba(100,100,111,0.2)_0px_7px_29px_0px] hover:shadow-[rgba(0,0,0,0.35)_0px_5px_15px] hover:-translate-y-3 transition-all duration-500">
         <div className="content">
           <h2 className="text-sm text-[#4a4a4a] font-bold">the best time to travel to cambodia</h2>
           <p className="text-[12px] font-normal text-[#687385] mt-[15px]">

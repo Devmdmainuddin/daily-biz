@@ -1,4 +1,5 @@
 import Image from "next/image";
+// import Link from "next/link";
 
 const BlogCard = () => {
   return (
@@ -14,6 +15,7 @@ const BlogCard = () => {
         <span className="px-4 py-1 text-sm bg-[#3abf7f] text-gray-200 inline-flex items-center justify-center mb-2">
           Science
         </span>
+
         <h2 className="text-xl font-medium text-gray-100 leading-tight">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit.
         </h2>
