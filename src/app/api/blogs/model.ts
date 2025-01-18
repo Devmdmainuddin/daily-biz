@@ -13,11 +13,11 @@ const blogSchema = new Schema<IBlog>(
     slug: {type: String, required: true, unique: true},
     category: {type: String, required: true},
     tags: {
-      type: [String], 
+      type: [String],
       required: true,
     },
     images: {
-      type: [String], 
+      type: [String],
       required: true,
     },
     author: {type: String},
@@ -25,7 +25,6 @@ const blogSchema = new Schema<IBlog>(
     authorImage: {type: String},
     description: {type: String, trim: true},
     isPublished: {type: Boolean, required: true, default: false},
-   
   },
   {
     timestamps: true,

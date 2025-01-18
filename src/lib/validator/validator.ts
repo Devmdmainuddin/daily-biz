@@ -9,7 +9,9 @@ export const BlogPostSchema = z.object({
   //   .nonempty("Tags are required")
   //   .refine((tags) => tags.split(",").length > 0, "Tags must include at least one item"),
   tags: z.array(z.string()).min(1, "At least one tag is required"),
-  images: z.array(z.string().url("Must be a valid URL")).min(1, "At least one image URL is required"),
+  images: z
+    .array(z.string().url("Must be a valid URL"))
+    .min(1, "At least one image URL is required"),
   // tags: z.array(z.string()).min(1, "At least one tag is required"),
   // tags: z.array(z.string()).default([]),
   // images: z

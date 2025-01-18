@@ -36,15 +36,15 @@ const BlogForm = () => {
   });
 
   const onSubmit = async (data: BlogPost) => {
-  console.log(data);
-  // const tagsArray = data.tags.split(",").map(tag => tag.trim()).filter(tag => tag);  
-  // const imagesArray = data.images.split(",").map(url => url.trim()).filter(url => url);  
-  
-  // const blogData = {  
-  //   ...data,  
-  //   tags: tagsArray,  
-  //   images: imagesArray  
-  // }; 
+    console.log(data);
+    // const tagsArray = data.tags.split(",").map(tag => tag.trim()).filter(tag => tag);
+    // const imagesArray = data.images.split(",").map(url => url.trim()).filter(url => url);
+
+    // const blogData = {
+    //   ...data,
+    //   tags: tagsArray,
+    //   images: imagesArray
+    // };
     try {
       const result = await addBlog(data);
       if (result.success) {

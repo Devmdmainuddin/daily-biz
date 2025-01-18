@@ -6,11 +6,13 @@ export function Ads() {
     <div className="text-center adsbygoogle my-3">
       <Adsense
         client="ca-pub-6182407366748084"
-        slot="use-your-slot-id-here"
+        slot="2784092389"
         style={{display: "block"}}
         layout="in-article"
         format="fluid"
+       
       />
+
     </div>
   );
 }
