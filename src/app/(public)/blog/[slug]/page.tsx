@@ -6,8 +6,8 @@ const page = async (props: {
   params: Promise<{slug: string}>;
   searchParams: Promise<{page: string; color: string; size: string}>;
 }) => {
-  const searchParams = await props.searchParams;
-  console.log(searchParams.toString);
+  // const searchParams = await props.searchParams;
+
   // const { page, color, size } = searchParams
 
   const params = await props.params;

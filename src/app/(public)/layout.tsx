@@ -5,6 +5,7 @@ import {APP_DESCRIPTION, APP_NAME, APP_SLOGAN} from "@/lib/constants";
 import Footer from "@/components/shared/footer";
 import Header from "@/components/shared/header/index";
 import {Toaster} from "@/components/ui/toaster";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,6 +33,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      {process.env.NODE_ENV=="development" && (
+      <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6182407366748084"
+     crossOrigin="anonymous"></Script>
+    )}
         <Header />
         {children}
         <Footer />
