@@ -278,7 +278,9 @@ const Dash = () => {
                   </div>
 
                   <div className="dropdown-menu relative flex shrink-0 group">
-                    <img
+                    <Image
+                      width={36}
+                      height={36}
                       src="https://readymadeui.com/team-1.webp"
                       alt="profile-pic"
                       className="w-9 h-9 rounded-full border-2 border-gray-300 cursor-pointer"
