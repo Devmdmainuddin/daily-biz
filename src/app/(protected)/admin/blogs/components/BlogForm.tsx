@@ -25,8 +25,8 @@ const BlogForm = () => {
       title: "",
       slug: "",
       description: "",
-      tags: "",
-      images: "",
+      // tags: [],
+      // images:[],
       category: "",
       isPublished: true,
       author: "",
@@ -36,22 +36,24 @@ const BlogForm = () => {
   });
 
   const onSubmit = async (data: BlogPost) => {
-    const blogData = {
-      ...data,
-      tags: data.tags
-        .split(",")
-        .map((tag) => tag.trim())
-        .join(","),
-    };
+  console.log(data);
+  // const tagsArray = data.tags.split(",").map(tag => tag.trim()).filter(tag => tag);  
+  // const imagesArray = data.images.split(",").map(url => url.trim()).filter(url => url);  
+  
+  // const blogData = {  
+  //   ...data,  
+  //   tags: tagsArray,  
+  //   images: imagesArray  
+  // }; 
     try {
-      const result = await addBlog(blogData);
+      const result = await addBlog(data);
       if (result.success) {
         console.log(result);
         toast({
           title: "Success",
           description: result.message,
         });
-        router.push("/api/blogs");
+        router.push("/blogs");
       } else {
         toast({
           title: "Error",

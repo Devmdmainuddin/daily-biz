@@ -1,4 +1,3 @@
-
 import React from "react";
 import BlogCard from "../../card/BlogCard";
 import {getBlogsByCategory} from "@/app/api/blogs/controller";
@@ -18,21 +17,18 @@ const BlogCategory = async () => {
   const Development = await getBlogsByCategory({cat: "Web Development"});
   // const allcategories = await getAllCategories();
   console.log("Tech", Development.length);
- 
+
   return (
     <div>
-    
       <div className="lg:flex items-stretch ">
         <div className="lg:w-1/2">
           <div className="sm:flex items-center justify-between xl:gap-x-2 gap-x-1 ">
             <div className="w-full sm:w-1/2 h-[384px]">
-          
               <Carousel
                 opts={{
                   align: "start",
                   loop: true,
                 }}
-           
               >
                 <CarouselContent>
                   {Tech.map((items, idx) => (
@@ -43,7 +39,7 @@ const BlogCategory = async () => {
                   ))}
                 </CarouselContent>
                 <CarouselPrevious />
-  <CarouselNext />
+                <CarouselNext />
               </Carousel>
             </div>
             <div className="w-full sm:w-1/2 h-[384px]">
@@ -139,7 +135,6 @@ const BlogCategory = async () => {
           </div>
         </div>
       </div>
-
     </div>
   );
 };

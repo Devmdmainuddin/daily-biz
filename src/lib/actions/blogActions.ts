@@ -11,7 +11,7 @@ export async function addBlog(data: BlogPost) {
     await connectToDatabase();
     const newBlog = new Blog(data);
     await newBlog.save();
-    revalidatePath("/api/blogs");
+    revalidatePath("/blogs");
 
     return {success: true, message: "Blog post created successfully"};
   } catch (error) {

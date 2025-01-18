@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const BlogCard = ({items}: {items: IBlog}) => {
   // const { title, images, author, createdAt } = items;
-  console.log("slider",items);
+  console.log("slider", items);
   return (
     <div className="relative rounded h-[364px]">
       <div className="absolute left-0 top-0 w-full h-full z-10 bg-gradient-to-b from-transparent via-transparent to-black/70 "></div>
@@ -16,7 +16,7 @@ const BlogCard = ({items}: {items: IBlog}) => {
       />
       <div className="p-4 absolute bottom-0 left-0 z-20">
         <span className="px-4 py-1 text-sm bg-[#3abf7f] text-gray-200 inline-flex items-center justify-center mb-2">
-         {items.category}
+          {items.category}
         </span>
 
         <h2 className="text-xl font-medium text-gray-100 leading-tight">
