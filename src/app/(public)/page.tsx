@@ -20,7 +20,7 @@ const Home = async () => {
 
           <h1 className="HeadingTitle">Recently Published</h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 my-[50px]">
-            {allBlogs?.slice(0, 4).map((items) => <BlogCard01 key={items._id} items={items} />)}
+            {allBlogs?.map((items) => <BlogCard01 key={items._id} items={items} />)}
           </div>
         </main>
         <aside className="w-full lg:w-1/3 px-3">

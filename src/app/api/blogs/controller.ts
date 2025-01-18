@@ -35,6 +35,16 @@ export async function getBlogsByTag({tag, limit = 10}: {tag: string; limit?: num
     .limit(limit);
   return JSON.parse(JSON.stringify(products)) as IBlog[];
 }
+export async function getBlogsByCategory({cat, limit = 10}: {cat: string; limit?: number}) {
+  await connectToDatabase();
+  const products = await Blog.find({
+    category: {$in: [cat]},
+    isPublished: true,
+  })
+    .sort({createdAt: "desc"})
+    .limit(limit);
+  return JSON.parse(JSON.stringify(products)) as IBlog[];
+}
 // GET ONE BlogPost BY SLUG
 export async function getBlogBySlug(slug: string) {
   await connectToDatabase();

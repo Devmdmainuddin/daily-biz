@@ -5,6 +5,7 @@ import type {Metadata} from "next";
 import "../globals.css";
 import {APP_DESCRIPTION, APP_NAME, APP_SLOGAN} from "@/lib/constants";
 import DashBoardHeader from "./components/DashBoardHeader";
+import {Toaster} from "@/components/ui/toaster";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,6 +42,7 @@ const layout = ({children}: {children: ReactNode}) => {
             </section>
           </div>
         </div>
+        <Toaster />
       </body>
     </html>
   );

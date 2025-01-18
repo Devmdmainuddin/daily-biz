@@ -1,7 +1,10 @@
+import {IBlog} from "@/app/api/blogs/model";
 import Image from "next/image";
 // import Link from "next/link";
 
-const BlogCard = () => {
+const BlogCard = ({items}: {items: IBlog}) => {
+  // const { title, images, author, createdAt } = items;
+  console.log(items);
   return (
     <div className="relative rounded h-full">
       <div className="absolute left-0 top-0 w-full h-full z-10 bg-gradient-to-b from-transparent via-transparent to-black/70 "></div>

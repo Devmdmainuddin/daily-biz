@@ -13,7 +13,7 @@ const BlogCard01 = ({items}: {items: IBlog}) => {
           width={325}
           height={211}
           alt="author image"
-          src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80"
+          src={items.images[0]}
           className="h-full w-full group-hover:scale-125 object-cover transition-all duration-500"
         />
         <span className="absolute top-[20px] left-[20px] text-center text-[14px] font-bold leading-[1.2] tracking-[0em] text-white bg-[rgba(71,71,71,0.4)] px-[22px] py-[5px] rounded-full z-50">

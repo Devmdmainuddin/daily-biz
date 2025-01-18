@@ -9,33 +9,16 @@ export interface IBlog extends Document, BlogPost {
 
 const blogSchema = new Schema<IBlog>(
   {
-    title: {
-      type: String,
-      required: true,
-    },
-    slug: {
-      type: String,
-      required: true,
-      unique: true,
-    },
-    category: {
-      type: String,
-      required: true,
-    },
+    title: {type: String, required: true},
+    slug: {type: String, required: true, unique: true},
+    category: {type: String, required: true},
     images: [String],
     author: {type: String},
     userEmail: {type: String},
     authorImage: {type: String},
-    description: {
-      type: String,
-      trim: true,
-    },
-    isPublished: {
-      type: Boolean,
-      required: true,
-      default: false,
-    },
-    tags: {type: [String], default: ["new arrival"]},
+    description: {type: String, trim: true},
+    isPublished: {type: Boolean, required: true, default: false},
+    tags: [String],
   },
   {
     timestamps: true,
