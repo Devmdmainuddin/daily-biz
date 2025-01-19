@@ -8,7 +8,7 @@ loadEnvConfig(cwd());
 
 const main = async () => {
   try {
-    await connectToDatabase(process.env.MONGODB_URI);
+    await connectToDatabase();
     const {blogs} = data;
     await Blog.deleteMany();
     await Blog.insertMany(blogs);

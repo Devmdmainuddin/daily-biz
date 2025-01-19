@@ -15,7 +15,7 @@ const SignUp: React.FC = () => {
     };
 
     try {
-      const res = await fetch("http://localhost:3000/api/auth/registation", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/auth/registation`, {
         method: "POST",
         body: JSON.stringify(newUser),
         headers: {

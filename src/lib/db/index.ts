@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
 
-
 // @ts-nocheck
 const MONGO_URI = process.env.MONGODB_URI || "";
 const cached: {
@@ -8,7 +7,6 @@ const cached: {
   promise?: Promise<typeof mongoose>;
 } = {};
 export const connectToDatabase = async () => {
- 
   if (cached.connection) return cached.connection;
 
   if (!MONGO_URI) throw new Error("MONGODB_URI is missing");
