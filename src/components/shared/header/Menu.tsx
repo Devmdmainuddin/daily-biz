@@ -14,7 +14,7 @@ const Menu = () => {
   return (
     <div className="flex justify-end">
       <nav className="flex gap-6 w-full items-center">
-        <Link href="/cart" className="header-button flex gap-1 items-center">
+        <Link href="/" className="header-button flex gap-1 items-center">
           <UserIcon className="h-5 w-5" /> Hello,Sign in
         </Link>
         <div className="md:hidden block">
