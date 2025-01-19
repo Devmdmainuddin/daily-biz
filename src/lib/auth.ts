@@ -36,7 +36,6 @@ export const authOptions: NextAuthOptions = {
             email: user.email,
             role: user.role,
             name: user.name,
-  
           };
         } catch (error) {
           console.error("Auth error:", error);
