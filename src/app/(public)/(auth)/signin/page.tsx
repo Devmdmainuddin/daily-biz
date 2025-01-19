@@ -21,7 +21,7 @@ const Login = () => {
     if (res?.error) {
       alert("Invalid email or password");
     } else {
-      window.location.href = "/";
+      window.location.href = "/admin";
     }
   };
 

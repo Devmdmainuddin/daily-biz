@@ -16,7 +16,6 @@ const BlogCategory = async () => {
   const Design = await getBlogsByCategory({cat: "Web Design"});
   const Development = await getBlogsByCategory({cat: "Web Development"});
   // const allcategories = await getAllCategories();
- 
 
   return (
     <div>

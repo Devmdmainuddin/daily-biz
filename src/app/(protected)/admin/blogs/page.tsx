@@ -1,10 +1,14 @@
+"use client"
 // import dynamic from "next/dynamic";
 // import "react-quill-new/dist/quill.snow.css";
 // import Editor from "@/components/Editor/Editor";
+import { useSession } from "next-auth/react";
 import BlogForm from "./components/BlogForm";
 // const ReactQuill = dynamic(() => import("react-quill-new"), {ssr: false});
 
 const Blogs = () => {
+  const session = useSession();
+  console.log(session);
   // const [formData, setFormData] = useState<{content: string}>({content: ""});
 
   // const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {

@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const BlogCard = ({items}: {items: IBlog}) => {
   // const { title, images, author, createdAt } = items;
- 
+
   return (
     <div className="relative rounded h-[364px]">
       <div className="absolute left-0 top-0 w-full h-full z-10 bg-gradient-to-b from-transparent via-transparent to-black/70 "></div>

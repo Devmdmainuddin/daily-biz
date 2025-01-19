@@ -53,6 +53,8 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
     "@eslint/eslintrc": "^3",
     "@types/bcrypt": "^5.0.2",
     "@types/node": "^20",
@@ -63,7 +65,7 @@
     "eslint-config-next": "15.1.4",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
-    "husky": "^8.0.0",
+    "husky": "^8.0.3",
     "lint-staged": "^15.3.0",
     "postcss": "^8",
     "prettier": "^3.4.2",

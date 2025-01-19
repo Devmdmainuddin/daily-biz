@@ -1,5 +1,5 @@
 import {NextRequest} from "next/server";
-import { connectToDatabase, errorResponse, successResponse} from "../../helpers";
+import {connectToDatabase, errorResponse, successResponse} from "../../helpers";
 import UserModel, {IUser} from "./model";
 
 export const POST = async (req: NextRequest) => {

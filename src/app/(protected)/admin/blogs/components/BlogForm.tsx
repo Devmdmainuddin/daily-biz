@@ -36,7 +36,6 @@ const BlogForm = () => {
   });
 
   const onSubmit = async (data: BlogPost) => {
-   
     // const tagsArray = data.tags.split(",").map(tag => tag.trim()).filter(tag => tag);
     // const imagesArray = data.images.split(",").map(url => url.trim()).filter(url => url);
 
@@ -48,7 +47,6 @@ const BlogForm = () => {
     try {
       const result = await addBlog(data);
       if (result.success) {
-      
         toast({
           title: "Success",
           description: result.message,

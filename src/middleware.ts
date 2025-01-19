@@ -4,7 +4,7 @@ import type {NextRequest} from "next/server";
 
 export const middleware = async (request: NextRequest) => {
   const cookieStore = await cookies();
-  const token = cookieStore.get("__Secure-next-auth.session-token");
+  const token = cookieStore.get("next-auth.session-token");
 
   if (!token) {
     return NextResponse.redirect(new URL("/signin", request.url));
@@ -13,8 +13,5 @@ export const middleware = async (request: NextRequest) => {
 };
 
 export const config = {
-  matcher: [
-    "/admin",
-
-  ],
+  matcher: ["/admin"],
 };

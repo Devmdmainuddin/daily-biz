@@ -1,3 +1,4 @@
+
 import React, {ReactNode} from "react";
 import {TheSidebar} from "./components";
 import {Geist, Geist_Mono} from "next/font/google";
@@ -6,6 +7,8 @@ import "../globals.css";
 import {APP_DESCRIPTION, APP_NAME, APP_SLOGAN} from "@/lib/constants";
 import DashBoardHeader from "./components/DashBoardHeader";
 import {Toaster} from "@/components/ui/toaster";
+import AuthProvider from "@/context/Authprovider";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,11 +28,13 @@ export const metadata: Metadata = {
   description: APP_DESCRIPTION,
 };
 
-const layout = ({children}: {children: ReactNode}) => {
+const Layout = ({children}: {children: ReactNode}) => {
+
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <main className="flex justify-between"></main>
+      <AuthProvider>
+<main className="flex justify-between"></main>
         <div className="relative bg-[#f7f6f9] h-full min-h-screen font-[sans-serif]">
           <div className="flex items-start">
             <nav id="sidebar" className="hidden lg:block lg:min-w-[250px] w-max max-lg:min-w-8">
@@ -43,9 +48,10 @@ const layout = ({children}: {children: ReactNode}) => {
           </div>
         </div>
         <Toaster />
+     </AuthProvider>
       </body>
     </html>
   );
 };
 
-export default layout;
+export default Layout;
