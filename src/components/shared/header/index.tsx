@@ -5,15 +5,18 @@ import Link from "next/link";
 import Search from "./Search";
 import Menu from "./Menu";
 import {MainNav} from "./main-nav";
+import {useSession} from "next-auth/react";
 
 const Header = () => {
+  const session = useSession();
+  console.log(session);
   return (
     <header className="bg-[#F3F4F6]  text-[#000000]">
       <div className="px-2">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <Link href="/" className="flex items-center header-button font-extrabold text-2xl m-1 ">
-              <Image src="/icons/logo.svg" width={40} height={40} alt={`${APP_NAME} logo`} />
+              <Image src="/icons/icn.png" width={40} height={40} alt={`${APP_NAME} logo`} />
               {APP_NAME}
             </Link>
           </div>

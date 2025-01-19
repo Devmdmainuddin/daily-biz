@@ -40,7 +40,7 @@ const Layout = ({children}: {children: ReactNode}) => {
 
               <section className="main-content w-full ">
                 <DashBoardHeader />
-                <div className="px-6 mt-6">{children}</div>
+                <div className="">{children}</div>
               </section>
             </div>
           </div>

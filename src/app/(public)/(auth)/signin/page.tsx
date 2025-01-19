@@ -9,7 +9,6 @@ const Login = () => {
 
     const form = e.target as HTMLFormElement;
 
-    // Now you can safely access the form fields
     const email = (form.elements.namedItem("email") as HTMLInputElement).value;
     const password = (form.elements.namedItem("password") as HTMLInputElement).value;
     const res = await signIn("credentials", {
@@ -21,7 +20,7 @@ const Login = () => {
     if (res?.error) {
       alert("Invalid email or password");
     } else {
-      window.location.href = "/admin";
+      window.location.href = "/";
     }
   };
 

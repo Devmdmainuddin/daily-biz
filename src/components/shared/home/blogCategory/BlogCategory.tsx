@@ -8,6 +8,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import {IBlog} from "@/app/api/blogs/model";
+import {NextResponse} from "next/server";
 // import Autoplay from "embla-carousel-autoplay"
 
 const BlogCategory = async () => {
@@ -16,27 +18,38 @@ const BlogCategory = async () => {
   const Design = await getBlogsByCategory({cat: "Web Design"});
   const Development = await getBlogsByCategory({cat: "Web Development"});
   // const allcategories = await getAllCategories();
+  // const renderBlogs = (blogs: IBlog[] | undefined) =>
+  //   blogs && Array.isArray(blogs) ? (
+  //     blogs.map((items, idx) => (
+  //       <CarouselItem key={idx}>
+  //         <BlogCard items={items} />
+  //       </CarouselItem>
+  //     ))
+  //   ) : (
+  //     <p>No blogs available</p>
+  //   );
+  const renderBlogs = (blogs: IBlog[] | undefined) => {
+    if (!blogs || !Array.isArray(blogs)) {
+      return <p>No blogs available</p>;
+    }
+    return blogs.map((items, idx) => (
+      <CarouselItem key={idx}>
+        <BlogCard items={items} />
+      </CarouselItem>
+    ));
+  };
 
+  const validateBlogs = (data: IBlog[] | NextResponse<{message: string}>): IBlog[] | undefined => {
+    return Array.isArray(data) ? data : undefined;
+  };
   return (
     <div>
       <div className="lg:flex items-stretch ">
         <div className="lg:w-1/2">
           <div className="sm:flex items-center justify-between xl:gap-x-2 gap-x-1 ">
             <div className="w-full sm:w-1/2 h-[384px]">
-              <Carousel
-                opts={{
-                  align: "start",
-                  loop: true,
-                }}
-              >
-                <CarouselContent>
-                  {Tech.map((items, idx) => (
-                    <CarouselItem key={idx}>
-                      {" "}
-                      <BlogCard items={items} />
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
+              <Carousel opts={{align: "start", loop: true}}>
+                <CarouselContent>{renderBlogs(validateBlogs(Tech))}</CarouselContent>
                 <CarouselPrevious />
                 <CarouselNext />
               </Carousel>
@@ -48,14 +61,7 @@ const BlogCategory = async () => {
                   loop: true,
                 }}
               >
-                <CarouselContent>
-                  {Programming.map((items, idx) => (
-                    <CarouselItem key={idx}>
-                      {" "}
-                      <BlogCard items={items} />
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
+                <CarouselContent>{renderBlogs(validateBlogs(Programming))}</CarouselContent>
               </Carousel>
             </div>
           </div>
@@ -67,14 +73,7 @@ const BlogCategory = async () => {
                 loop: true,
               }}
             >
-              <CarouselContent>
-                {Design.map((items, idx) => (
-                  <CarouselItem key={idx}>
-                    {" "}
-                    <BlogCard items={items} />
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
+              <CarouselContent>{renderBlogs(validateBlogs(Design))}</CarouselContent>
             </Carousel>
           </div>
         </div>
@@ -86,14 +85,7 @@ const BlogCategory = async () => {
                 loop: true,
               }}
             >
-              <CarouselContent>
-                {Development.map((items, idx) => (
-                  <CarouselItem key={idx}>
-                    {" "}
-                    <BlogCard items={items} />
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
+              <CarouselContent>{renderBlogs(validateBlogs(Development))}</CarouselContent>
             </Carousel>
           </div>
           <div className="sm:flex items-center justify-between xl:gap-x-2 gap-x-1  mt-2">
@@ -104,14 +96,7 @@ const BlogCategory = async () => {
                   loop: true,
                 }}
               >
-                <CarouselContent>
-                  {Design.map((items, idx) => (
-                    <CarouselItem key={idx}>
-                      {" "}
-                      <BlogCard items={items} />
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
+                <CarouselContent>{renderBlogs(validateBlogs(Design))}</CarouselContent>
               </Carousel>
             </div>
             <div className="w-full sm:w-1/2 h-[384px] sm:mt-0 mt-2">
@@ -121,14 +106,7 @@ const BlogCategory = async () => {
                   loop: true,
                 }}
               >
-                <CarouselContent>
-                  {Programming.map((items, idx) => (
-                    <CarouselItem key={idx}>
-                      {" "}
-                      <BlogCard items={items} />
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
+                <CarouselContent>{renderBlogs(validateBlogs(Programming))}</CarouselContent>
               </Carousel>
             </div>
           </div>

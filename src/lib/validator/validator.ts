@@ -24,7 +24,9 @@ export const BlogPostSchema = z.object({
   userEmail: z.string().email("Must be a valid email"),
   authorImage: z.string().url("Must be a valid URL"),
 });
-
+export const BlogUpdateSchema = BlogPostSchema.extend({
+  _id: z.string(),
+});
 export type BlogPost = z.infer<typeof BlogPostSchema>;
 
 export type Data = {

@@ -17,7 +17,7 @@ const page = async (props: {
 
   const relatedBlogs = await getRelatedBlogsByCategory({
     category: blog.category,
-    productId: blog._id,
+    blogId: blog._id,
     page: Number(page || "1"),
   });
   console.log(relatedBlogs);

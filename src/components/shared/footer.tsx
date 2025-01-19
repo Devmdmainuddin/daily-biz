@@ -5,7 +5,7 @@ import {Input} from "../ui/input";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-100 py-8 dark:bg-gray-800 mt-10">
+    <footer className="bg-gray-100 py-8 dark:bg-gray-800 ">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <div className="space-y-4">

@@ -4,6 +4,8 @@ import {getAllBlogs} from "../api/blogs/controller";
 import Sidebar from "@/components/shared/sidebar";
 import Sitebottom from "@/components/shared/home/sitebottom/sitebottom";
 import BlogCard01 from "@/components/shared/card/BlogCard01";
+import {IBlog} from "../api/blogs/model";
+import {NextResponse} from "next/server";
 
 // import getProductsByTag from "../app/api/blogs/controller"
 
@@ -11,7 +13,16 @@ const Home = async () => {
   const allBlogs = await getAllBlogs();
 
   // const todaysDeals = await getBlogsByTag({tag: "todays-deal"});
+  const renderBlogs = (blogs: IBlog[] | undefined) => {
+    if (!blogs || !Array.isArray(blogs)) {
+      return <p>No blogs available</p>;
+    }
+    return blogs.map((items, idx: number) => <BlogCard01 key={idx} items={items} />);
+  };
 
+  const validateBlogs = (data: IBlog[] | NextResponse<{message: string}>): IBlog[] | undefined => {
+    return Array.isArray(data) ? data : undefined;
+  };
   return (
     <div className="">
       <BlogCategory />
@@ -20,7 +31,7 @@ const Home = async () => {
           <LatestPost />
           <h1 className="HeadingTitle">Recently Published</h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 my-[50px]">
-            {allBlogs?.map((items) => <BlogCard01 key={items._id} items={items} />)}
+            {renderBlogs(validateBlogs(allBlogs))}
           </div>
         </main>
         <aside className="w-full lg:w-1/3 px-3">
