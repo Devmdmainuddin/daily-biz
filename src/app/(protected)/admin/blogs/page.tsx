@@ -1,8 +1,8 @@
-"use client"
+"use client";
 // import dynamic from "next/dynamic";
 // import "react-quill-new/dist/quill.snow.css";
 // import Editor from "@/components/Editor/Editor";
-import { useSession } from "next-auth/react";
+import {useSession} from "next-auth/react";
 import BlogForm from "./components/BlogForm";
 // const ReactQuill = dynamic(() => import("react-quill-new"), {ssr: false});
 
