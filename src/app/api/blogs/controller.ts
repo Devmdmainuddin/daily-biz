@@ -20,8 +20,12 @@ export const onBlogs = async () => {
 
 export async function getAllBlogs() {
   await connectToDatabase();
-  const blogs = await Blog.find({isPublished: true});
-  return blogs;
+  const blogs = await Blog.find({isPublished: true}).lean();
+  return blogs.map((blog) => ({
+    ...blog,
+    _id: blog._id.toString(),
+
+  }));
 }
 export async function getAllCategories() {
   try {
@@ -98,18 +102,18 @@ export async function updateBlog(data: z.infer<typeof BlogUpdateSchema>) {
   }
 }
 // DELETE
-export async function deleteBlog(id: string) {
+export async function deleteBlog(id: string): Promise<boolean> {
   try {
-    await connectToDatabase();
-    const res = await Blog.findByIdAndDelete(id);
-    if (!res) throw new Error("Blog not found");
-    revalidatePath("/admin/blog");
-    return {
-      success: true,
-      message: "Blog deleted successfully",
-    };
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/blogs/${id}`, {
+      method: "DELETE",
+    });
+    if (!response.ok) {
+      throw new Error(`Failed to delete project with ID: ${id}`);
+    }
+    return true;
   } catch (error) {
-    return {success: false, message: formatError(error)};
+    console.error("Error deleting project:", error);
+    return false;
   }
 }
 // GET ONE BLOG BY ID

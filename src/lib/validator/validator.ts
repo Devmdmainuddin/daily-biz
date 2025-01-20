@@ -8,10 +8,36 @@ export const BlogPostSchema = z.object({
   //   .string()
   //   .nonempty("Tags are required")
   //   .refine((tags) => tags.split(",").length > 0, "Tags must include at least one item"),
-  tags: z.array(z.string()).min(1, "At least one tag is required"),
-  images: z
-    .array(z.string().url("Must be a valid URL"))
-    .min(1, "At least one image URL is required"),
+  // tags: z
+  // .string()
+  // .transform((val) => val.split(',').map((tag) => tag.trim()))
+  // .refine((tags) => tags.length > 0, { message: 'At least one tag is required' }),
+  // images: z
+  //   .array(z.string().url("Must be a valid URL"))
+  //   .min(1, "At least one image URL is required"),
+
+  // tags: z
+  //   .string()
+  //   .transform((tags) => tags.split(",").map((tag) => tag.trim()).filter(Boolean)),
+  
+
+  tags: z
+  .string()
+  .transform((val) =>
+    val
+      .split(",")
+      .map((tag) => tag.trim())
+      .filter(Boolean),
+  )
+  .refine((tags) => tags.length > 0, { message: "At least one tag is required" }),
+images: z.string().transform((images) =>
+  images
+    .split(",")
+    .map((url) => url.trim())
+    .filter(Boolean),
+),
+
+
   // tags: z.array(z.string()).min(1, "At least one tag is required"),
   // tags: z.array(z.string()).default([]),
   // images: z

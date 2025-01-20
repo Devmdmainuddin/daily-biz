@@ -1,6 +1,6 @@
 "use client";
-import {useToast} from "@/hooks/use-toast";
-import {addBlog} from "@/lib/actions/blogActions";
+// import {useToast} from "@/hooks/use-toast";
+// import {addBlog} from "@/lib/actions/blogActions";
 import {Controller, useForm} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
 import {BlogPost, BlogPostSchema} from "@/lib/validator/validator";
@@ -10,11 +10,13 @@ import {Input} from "@/components/ui/input";
 import {Textarea} from "@/components/ui/textarea";
 import {Checkbox} from "@/components/ui/checkbox";
 import {useSession} from "next-auth/react";
+// import { createBlog } from "@/app/api/blogs/controller";
+// import { onCreateBlog } from "@/lib/actions/blogActions";
 // import dynamic from "next/dynamic";
 // import "react-quill-new/dist/quill.snow.css";
 // import Editor from "@/components/Editor/Editor";
 const BlogForm = () => {
-  const {toast} = useToast();
+  // const {toast} = useToast();
   const session = useSession();
   console.log(session.data?.user);
 
@@ -25,45 +27,29 @@ const BlogForm = () => {
     formState: {errors, isSubmitting},
   } = useForm<BlogPost>({
     resolver: zodResolver(BlogPostSchema),
-    defaultValues: {
-      title: "",
-      slug: "",
-      description: "",
-      // tags: [],
-      // images:[],
-      category: "",
-      isPublished: true,
-      author: "",
-      userEmail: "",
-      authorImage: "",
-    },
+   
   });
 
   const onSubmit = async (data: BlogPost) => {
-    const titles = data.title;
-    console.log(titles);
-    // const tagsArray = data.tags.split(",").map(tag => tag.trim()).filter(tag => tag);
-    // const imagesArray = data.images.split(",").map(url => url.trim()).filter(url => url);
-
-    // const blogData = {
-    //   ...data,
-    //   tags: tagsArray,
-    //   images: imagesArray
-    // };
+console.log(data);
     try {
-      const result = await addBlog(data);
-      if (result.success) {
-        toast({title: "Success", description: result.message});
-      } else {
-        toast({title: "Error", description: result.message, variant: "destructive"});
-      }
-    } catch (err) {
-      console.error(err);
-      toast({
-        title: "Error",
-        description: "An error occurred while submitting the form.",
-        variant: "destructive",
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/blogs`, {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+        },
       });
+      if (!res.ok) {
+        const error = await res.json();
+        throw new Error(error.message || "Failed to sign up");
+      }
+      await res.json();
+
+      alert("blogs create at successfully!");
+    } catch (error) {
+      console.log(error);
+      alert("An error occurred while blogs create");
     }
   };
   return (
@@ -89,18 +75,18 @@ const BlogForm = () => {
               <Textarea id="description" {...register("description")} />
               {errors.description && <p className="text-red-500">{errors.description.message}</p>}
             </div>
-
             <div>
-              <Label htmlFor="tags">Tags (comma-separated)</Label>
-              <Input
-                id="tags"
-                {...register("tags")}
-                className="w-full p-2 border-b border-gray-300  outline-0"
-                placeholder="e.g., React, Tailwind, MongoDB"
-              />
+            <Label htmlFor="tags">Tags (comma-separated)</Label>
+            <Input
+              id="tags"
+              {...register("tags")}
 
-              {errors.tags && <p className="text-red-500">{errors.tags.message}</p>}
+              placeholder="e.g., React, Tailwind, MongoDB"
+            />
+            {errors.tags && <p className="text-red-500">{errors.tags.message}</p>}
+
             </div>
+         
             <div>
               <Label htmlFor="images">Images (comma-separated URLs)</Label>
               <Input
@@ -115,7 +101,23 @@ const BlogForm = () => {
 
               {errors.images && <p className="text-red-500">{errors.images.message}</p>}
             </div>
-
+{/* <div>
+  <Label htmlFor="images">Images (comma-separated URLs)</Label>
+  <Input
+    id="images"
+    {...register("images")}
+    placeholder="e.g., https://example.com/image1.jpg, https://example.com/image2.jpg"
+    onBlur={(e) => {
+      const value = e.target.value;
+      const cleanedImages = value
+        .split(",")
+        .map((url) => url.trim()) 
+        .filter((url) => url); 
+      e.target.value = cleanedImages.join(", "); 
+    }}
+  />
+  {errors.images && <p className="text-red-500">{errors.images.message}</p>}
+</div> */}
             <div>
               <Label htmlFor="category">Category</Label>
               <Input id="category" {...register("category")} />

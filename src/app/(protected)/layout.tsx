@@ -7,7 +7,7 @@ import {APP_DESCRIPTION, APP_NAME, APP_SLOGAN} from "@/lib/constants";
 import DashBoardHeader from "./components/DashBoardHeader";
 import {Toaster} from "@/components/ui/toaster";
 import AuthProvider from "@/context/Authprovider";
-
+<meta name="google-adsense-account" content="ca-pub-6182407366748084"></meta>
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],

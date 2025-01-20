@@ -1,12 +1,12 @@
-// "use client";
+"use client";
 
-// import React, { useEffect } from "react";
-// import Script from "next/script";
+
+import Script from "next/script";
 
 function Ads() {
   // useEffect(() => {
   //   try {
-  //     (window.adsbygoogle = window.adsbygoogle || []).push({});
+  //     (adsbygoogle = window.adsbygoogle || []).push({});
   //   } catch (err) {
   //     console.error("AdSense Error:", err);
   //   }
@@ -20,9 +20,10 @@ function Ads() {
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
         strategy="afterInteractive"
       /> */}
-
+<Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6182407366748084"
+     crossOrigin="anonymous"></Script>
       {/* Ad Container */}
-      {/* <div className="text-center adsbygoogle my-3 h-[66px]">
+      <div className="text-center adsbygoogle my-3 h-[66px]">
         <ins
           className="adsbygoogle"
           style={{ display: "block" }}
@@ -31,7 +32,7 @@ function Ads() {
           data-ad-format="auto"
           data-full-width-responsive="true"
         ></ins>
-      </div> */}
+      </div>
     </>
   );
 }
