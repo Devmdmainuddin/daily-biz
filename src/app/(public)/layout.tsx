@@ -5,9 +5,9 @@ import {APP_DESCRIPTION, APP_NAME, APP_SLOGAN} from "@/lib/constants";
 import Footer from "@/components/shared/footer";
 import Header from "@/components/shared/header/index";
 import {Toaster} from "@/components/ui/toaster";
-import Script from "next/script";
+// import Script from "next/script";
 import AuthProvider from "@/context/Authprovider";
-<meta name="google-adsense-account" content="ca-pub-6182407366748084"></meta>
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -33,17 +33,29 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      {/*  */}
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <AuthProvider>
-          {process.env.NODE_ENV == "development" && (
-            <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6182407366748084"
-            crossOrigin="anonymous"></Script>
-          )}
+          
           <Header />
           {children}
           <Footer />
           <Toaster />
         </AuthProvider>
+        {/* {process.env.NODE_ENV == "development" && (
+            <Script
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID}`}
+            crossOrigin="anonymous"
+          ></Script>
+          )} */}
+       
+            {/* <Script
+              async
+              src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID}`}
+              crossOrigin="anonymous"
+            ></Script> */}
+       
       </body>
     </html>
   );

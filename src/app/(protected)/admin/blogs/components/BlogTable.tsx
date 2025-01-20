@@ -1,7 +1,7 @@
 "use client";
 
-import { deleteBlog } from "@/app/api/blogs/controller";
-import { IBlog } from "@/app/api/blogs/model";
+import {deleteBlog} from "@/app/api/blogs/controller";
+import {IBlog} from "@/app/api/blogs/model";
 import {Eye, FilePenLine, Trash2} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";

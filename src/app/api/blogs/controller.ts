@@ -24,7 +24,6 @@ export async function getAllBlogs() {
   return blogs.map((blog) => ({
     ...blog,
     _id: blog._id.toString(),
-
   }));
 }
 export async function getAllCategories() {

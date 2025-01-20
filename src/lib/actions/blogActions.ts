@@ -3,7 +3,7 @@
 import {connectToDatabase} from "../db";
 import Blog from "@/app/api/blogs/model";
 import {BlogPost, BlogPostSchema} from "../validator/validator";
-import { errorResponse, successResponse, zodErrorResponse } from "@/app/api/helpers";
+import {errorResponse, successResponse, zodErrorResponse} from "@/app/api/helpers";
 
 export async function addBlog(data: BlogPost) {
   try {
@@ -22,24 +22,24 @@ export async function addBlog(data: BlogPost) {
 }
 export const onCreateBlog = async (payload: BlogPost) => {
   try {
-      const { error } = BlogPostSchema.safeParse(payload);
-      if (error) return zodErrorResponse(error, 400);
+    const {error} = BlogPostSchema.safeParse(payload);
+    if (error) return zodErrorResponse(error, 400);
 
-      await connectToDatabase();
-      
-      const blog = (await Blog.create({
-          ...payload,
-      })) as BlogPost;
-      return successResponse(blog);
+    await connectToDatabase();
+
+    const blog = (await Blog.create({
+      ...payload,
+    })) as BlogPost;
+    return successResponse(blog);
   } catch (error) {
     console.log(error);
-      return errorResponse('Internal server error');
+    return errorResponse("Internal server error");
   }
 };
 
 // export async function addBlog(data: BlogPost) {
 //   try {
-   
+
 //     const parsedData = BlogPostSchema.parse({
 //       ...data,
 //       tags: Array.isArray(data.tags) ? data.tags : data.tags.split(",").map((tag) => tag.trim()),

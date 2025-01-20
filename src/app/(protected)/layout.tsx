@@ -7,7 +7,8 @@ import {APP_DESCRIPTION, APP_NAME, APP_SLOGAN} from "@/lib/constants";
 import DashBoardHeader from "./components/DashBoardHeader";
 import {Toaster} from "@/components/ui/toaster";
 import AuthProvider from "@/context/Authprovider";
-<meta name="google-adsense-account" content="ca-pub-6182407366748084"></meta>
+
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -29,6 +30,7 @@ export const metadata: Metadata = {
 const Layout = ({children}: {children: ReactNode}) => {
   return (
     <html lang="en">
+    
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <AuthProvider>
           <main className="flex justify-between"></main>
@@ -46,6 +48,7 @@ const Layout = ({children}: {children: ReactNode}) => {
           </div>
           <Toaster />
         </AuthProvider>
+     
       </body>
     </html>
   );

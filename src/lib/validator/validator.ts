@@ -19,24 +19,22 @@ export const BlogPostSchema = z.object({
   // tags: z
   //   .string()
   //   .transform((tags) => tags.split(",").map((tag) => tag.trim()).filter(Boolean)),
-  
 
   tags: z
-  .string()
-  .transform((val) =>
-    val
+    .string()
+    .transform((val) =>
+      val
+        .split(",")
+        .map((tag) => tag.trim())
+        .filter(Boolean),
+    )
+    .refine((tags) => tags.length > 0, {message: "At least one tag is required"}),
+  images: z.string().transform((images) =>
+    images
       .split(",")
-      .map((tag) => tag.trim())
+      .map((url) => url.trim())
       .filter(Boolean),
-  )
-  .refine((tags) => tags.length > 0, { message: "At least one tag is required" }),
-images: z.string().transform((images) =>
-  images
-    .split(",")
-    .map((url) => url.trim())
-    .filter(Boolean),
-),
-
+  ),
 
   // tags: z.array(z.string()).min(1, "At least one tag is required"),
   // tags: z.array(z.string()).default([]),

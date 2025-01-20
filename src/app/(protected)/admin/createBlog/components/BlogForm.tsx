@@ -27,11 +27,10 @@ const BlogForm = () => {
     formState: {errors, isSubmitting},
   } = useForm<BlogPost>({
     resolver: zodResolver(BlogPostSchema),
-   
   });
 
   const onSubmit = async (data: BlogPost) => {
-console.log(data);
+    console.log(data);
     try {
       const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/blogs`, {
         method: "POST",
@@ -76,17 +75,11 @@ console.log(data);
               {errors.description && <p className="text-red-500">{errors.description.message}</p>}
             </div>
             <div>
-            <Label htmlFor="tags">Tags (comma-separated)</Label>
-            <Input
-              id="tags"
-              {...register("tags")}
-
-              placeholder="e.g., React, Tailwind, MongoDB"
-            />
-            {errors.tags && <p className="text-red-500">{errors.tags.message}</p>}
-
+              <Label htmlFor="tags">Tags (comma-separated)</Label>
+              <Input id="tags" {...register("tags")} placeholder="e.g., React, Tailwind, MongoDB" />
+              {errors.tags && <p className="text-red-500">{errors.tags.message}</p>}
             </div>
-         
+
             <div>
               <Label htmlFor="images">Images (comma-separated URLs)</Label>
               <Input
@@ -101,7 +94,7 @@ console.log(data);
 
               {errors.images && <p className="text-red-500">{errors.images.message}</p>}
             </div>
-{/* <div>
+            {/* <div>
   <Label htmlFor="images">Images (comma-separated URLs)</Label>
   <Input
     id="images"
